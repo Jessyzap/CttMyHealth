@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Health</string>
+    <string name="health">Health</string>
+    <string name="my">my</string>
+    <string name="titulo_cadastro">Cadastro</string>
+    <string name="btn_cadastrar">Cadastrar</string>
+    <string name="yoga">Yoga</string>
+</resources>
