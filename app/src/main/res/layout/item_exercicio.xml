@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         xmlns:tools="http://schemas.android.com/tools"
-        android:background="#F5F5F5"
+        android:background="#FFE3FB"
         android:id="@+id/itemExercicio"
 >
 
@@ -14,13 +14,14 @@
             android:layout_height="56dp"
             android:layout_width="56dp"
             android:layout_marginStart="16dp"
+            android:src="@drawable/ic_005_yoga"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
             android:id="@+id/txtExercicio"
-            android:textColor="#8EAFE2"
+            android:textColor="#787074"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textSize="20sp"

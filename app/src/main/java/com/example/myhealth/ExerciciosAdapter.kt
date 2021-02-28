@@ -1,11 +1,16 @@
 package com.example.myhealth
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhealth.model.Exercicio
+
+
 
 class ExerciciosAdapter(private val listaExercicios: MutableList<Exercicio>) :
     RecyclerView.Adapter<ExerciciosAdapter.ExercicioHolder>() {
@@ -22,8 +27,10 @@ class ExerciciosAdapter(private val listaExercicios: MutableList<Exercicio>) :
     }
 
     override fun onBindViewHolder(holder: ExercicioHolder, position: Int) {
+        //val item: TextView = findViewById(R.id.itemExercicio)
+
         holder.nomeExercicio.text = listaExercicios[position].nomeExercicio
-        holder.linear
+        //holder.itemExercicio
     }
 
     override fun getItemCount(): Int {

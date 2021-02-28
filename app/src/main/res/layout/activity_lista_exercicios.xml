@@ -17,19 +17,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView android:layout_width="wrap_content"
-                   android:layout_height="50dp"
-                   android:src="@drawable/ic_user"
-                   android:layout_marginRight="5dp"
-                   android:layout_marginLeft="5dp"
-                   android:layout_marginTop="5dp"
-                   />
+        <ImageView
+                android:id="@+id/fotoFixa"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_user"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+        />
 
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="20dp"
-                  android:textColor="#FFFFFF"
-                  android:text="Giovani"
+        <TextView
+                android:id="@+id/nomeFixo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:text="Giovani"
         />
 
     </LinearLayout>
