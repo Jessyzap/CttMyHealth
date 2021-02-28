@@ -6,6 +6,7 @@
         android:layout_height="80dp"
         xmlns:tools="http://schemas.android.com/tools"
         android:background="#F5F5F5"
+        android:id="@+id/itemExercicio"
 >
 
     <ImageView

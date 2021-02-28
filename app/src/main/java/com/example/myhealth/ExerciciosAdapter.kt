@@ -21,15 +21,13 @@ class ExerciciosAdapter(private val listaExercicios: MutableList<Exercicio>) :
         return ExercicioHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: ExercicioHolder, position: Int) {
-        holder.nomeExercicio.text = listaExercicios[position].nome
-
+        holder.nomeExercicio.text = listaExercicios[position].nomeExercicio
+        holder.linear
     }
 
     override fun getItemCount(): Int {
         return listaExercicios.size
     }
-
 
 }

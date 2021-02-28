@@ -12,9 +12,6 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.hide()
         mostrarTelaCadastro()
-
-
-
     }
 
     fun mostrarTelaCadastro() {
@@ -23,5 +20,6 @@ class SplashActivity : AppCompatActivity() {
             val telaCadastro =
                 Intent(this, CadastroActivity::class.java)
             startActivity(telaCadastro)
+            finish()
         }, 3000)}
 }
