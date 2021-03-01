@@ -1,5 +1,6 @@
 package com.example.myhealth
 
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -7,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhealth.model.Exercicio
+import com.example.myhealth.model.Usuario
+import kotlinx.android.synthetic.main.activity_lista_exercicios.*
 
 
 class ListaExerciciosActivity : AppCompatActivity() {
@@ -25,18 +28,11 @@ class ListaExerciciosActivity : AppCompatActivity() {
         val nomeRecebido = intent.getStringExtra("NOME")
         nome.text = nomeRecebido
 
-        //val fotoRecebida = intent.extras?.get("IMAGEM") as Bitmap
-        //foto.setImageBitmap(fotoRecebida)
+        val fotoRecebida = intent.getParcelableExtra<Bitmap>("IMAGEM")
 
-
-//        val usuario = intent.extras?.get("USUARIO") as Usuario
-//
-//        usuario.foto?.let{
-//            imgUsuario.setImageBitmap(it)
-//        }
-//
-//        nome.text = usuario.nome
-
+        if (fotoRecebida is Bitmap) {
+            foto.setImageBitmap(fotoRecebida)
+        }
 
         val lista: MutableList<Exercicio> = mutableListOf(
             Exercicio(nomeExercicio = "Yoga"),
@@ -50,7 +46,6 @@ class ListaExerciciosActivity : AppCompatActivity() {
             Exercicio(nomeExercicio = "Chair"),
             Exercicio(nomeExercicio = "Cobra")
         )
-
 
         val rvExercicios = findViewById<RecyclerView>(R.id.listaExercicios)
         rvExercicios.adapter = ExerciciosAdapter(lista)

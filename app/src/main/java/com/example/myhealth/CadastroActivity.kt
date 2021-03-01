@@ -10,12 +10,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.myhealth.model.Usuario
+import java.util.*
 
 class CadastroActivity : AppCompatActivity() {
 
     private lateinit var fotoUsuario: ImageView
     private lateinit var nomeUsuario: EditText
     private lateinit var botaoCadastrar: Button
+    private var foto: Bitmap? = null
+    private lateinit var imagem: Bitmap
+    private var recebeuBitmap = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +37,7 @@ class CadastroActivity : AppCompatActivity() {
             if (nomeDigitado.isEmpty()) {
                 nomeUsuario.error = "Insira o nome do usuário"
             } else {
-                val usuario = Usuario(nomeDigitado)
+                val usuario = Usuario(nomeDigitado, foto)
                 exibirUsuario(usuario)
             }
         }
@@ -57,8 +61,9 @@ class CadastroActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 123 && resultCode == RESULT_OK) {
-            val imagem = data?.extras?.get("data") as Bitmap
+            imagem = data?.extras?.get("data") as Bitmap
             fotoUsuario.setImageBitmap(imagem)
+            recebeuBitmap = 1
         }
     }
 
@@ -69,18 +74,22 @@ class CadastroActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT
         ).show()
 
-       redirecionar(usuario)
+        redirecionar(usuario)
     }
 
     fun redirecionar(usuario: Usuario) {
 
-        val chaveNomeUsuario = "NOME"
-        val chaveFotoUsuario = "IMAGEM"
-
         val destinoActivity = Intent(this@CadastroActivity, ListaExerciciosActivity::class.java)
-        destinoActivity.putExtra(chaveNomeUsuario, usuario.nome)
-        destinoActivity.putExtra(chaveFotoUsuario, usuario.foto)
+        destinoActivity.putExtra("NOME", usuario.nome)
+        if (recebeuBitmap == 1) {
+            destinoActivity.putExtra("IMAGEM", imagem)
+        }
         startActivity(destinoActivity)
         finish()
+
     }
 }
+
+
+
+
