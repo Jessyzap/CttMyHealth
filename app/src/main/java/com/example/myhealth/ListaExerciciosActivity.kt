@@ -12,7 +12,6 @@ import com.example.myhealth.model.Exercicio
 import com.example.myhealth.model.Usuario
 import kotlinx.android.synthetic.main.activity_lista_exercicios.*
 
-
 class ListaExerciciosActivity : AppCompatActivity() {
 
     private lateinit var foto: ImageView
