@@ -16,6 +16,7 @@ class ExercicioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       // supportActionBar?.hide()  // Para tirar a barra com o nome do app.
         setContentView(R.layout.activity_yoga)
 
         nome = findViewById(R.id.nomeExercicio)
