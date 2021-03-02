@@ -32,3 +32,4 @@ class ExercicioActivity : AppCompatActivity() {
         }.start()
     }
 }
+// BOM DIA  
