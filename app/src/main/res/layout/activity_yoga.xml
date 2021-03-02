@@ -7,47 +7,66 @@
         android:layout_height="match_parent"
         tools:context=".ExercicioActivity">
 
-    <ImageView
-            android:id="@+id/imgExercicio"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="16dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  android:orientation="vertical"
+                  android:gravity="center">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="36sp"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textColor="#787074"
-            android:text="@string/yoga"
-            android:id="@+id/nomeExercicio"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/imgUsuario"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="#787074"
+                android:text="@string/yoga"
+                android:id="@+id/nomeExercicio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/imgUsuario"/>
 
-    <TextView
-            android:id="@+id/contador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="46sp"
-            android:textColor="#787074"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:text="03:00"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="341dp"/>
+        <ImageView
+                android:id="@+id/imgExercicio"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginVertical="55dp"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imgExercicio"
+                android:gravity="center">
+            <TextView
+                    android:id="@+id/contador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="46sp"
+                    android:textColor="#787074"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:text="03:00"
+                    android:visibility="invisible"/>
+
+            <Button android:id="@+id/btnIniciarCronometro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:background="@color/colorPrimary"
+                    android:paddingHorizontal="30dp"
+                    android:paddingVertical="10dp"
+                    android:layout_centerInParent="true"
+                    android:text="Iniciar"/>
+        </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
