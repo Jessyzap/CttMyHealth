@@ -35,16 +35,16 @@ class ListaExerciciosActivity : AppCompatActivity() {
         }
 
         val lista: MutableList<Exercicio> = mutableListOf(
-            Exercicio(nomeExercicio = "Yoga"),
-            Exercicio(nomeExercicio = "Bridge"),
-            Exercicio(nomeExercicio = "Child"),
-            Exercicio(nomeExercicio = "Leg"),
-            Exercicio(nomeExercicio = "Corpse"),
-            Exercicio(nomeExercicio = "Lotus"),
-            Exercicio(nomeExercicio = "Boat"),
-            Exercicio(nomeExercicio = "Camel"),
-            Exercicio(nomeExercicio = "Chair"),
-            Exercicio(nomeExercicio = "Cobra")
+            Exercicio(nomeExercicio = "Yoga", R.drawable.ic_005_yoga),
+            Exercicio(nomeExercicio = "Bridge", R.drawable.ic_006_bridge),
+            Exercicio(nomeExercicio = "Child", R.drawable.ic_010_child),
+            Exercicio(nomeExercicio = "Leg", R.drawable.ic_031_leg),
+            Exercicio(nomeExercicio = "Corpse", R.drawable.ic_012_corpse),
+            Exercicio(nomeExercicio = "Lotus", R.drawable.ic_033_lotus),
+            Exercicio(nomeExercicio = "Boat", R.drawable.ic_002_boat),
+            Exercicio(nomeExercicio = "Camel", R.drawable.ic_007_camel),
+            Exercicio(nomeExercicio = "Chair", R.drawable.ic_009_chair),
+            Exercicio(nomeExercicio = "Cobra", R.drawable.ic_011_cobra)
         )
 
         val rvExercicios = findViewById<RecyclerView>(R.id.listaExercicios)
