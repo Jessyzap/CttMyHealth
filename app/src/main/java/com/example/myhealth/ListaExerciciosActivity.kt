@@ -1,5 +1,6 @@
 package com.example.myhealth
 
+import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,4 +52,5 @@ class ListaExerciciosActivity : AppCompatActivity() {
         rvExercicios.adapter = ExerciciosAdapter(lista)
         rvExercicios.layoutManager = LinearLayoutManager(this)
     }
+
 }
