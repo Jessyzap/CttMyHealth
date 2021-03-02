@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myhealth.model.Exercicio
@@ -18,9 +20,20 @@ class ExerciciosAdapter(private val listaExercicios: MutableList<Exercicio>) :
     RecyclerView.Adapter<ExerciciosAdapter.ExercicioHolder>() {
 
 
-    class ExercicioHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ExercicioHolder(view: View) : RecyclerView.ViewHolder(view){
         val nomeExercicio: TextView = view.findViewById(R.id.txtExercicio)
         val fotoExercicio: ImageView = view.findViewById(R.id.imgExercicio)
+
+//        init{
+//            view.setOnClickListener{
+//            //    val position: Int = adapterPosition
+//
+//            val intent = Intent(view.context, ExercicioActivity::class.java)
+//                view.context.startActivity(intent)
+//                }
+////                   Toast.makeText(view.context, "Clicado", Toast.LENGTH_SHORT).show()
+//        }
+
 
     }
 
@@ -33,7 +46,12 @@ class ExerciciosAdapter(private val listaExercicios: MutableList<Exercicio>) :
     override fun onBindViewHolder(holder: ExercicioHolder, position: Int) {
         holder.nomeExercicio.text = listaExercicios[position].nomeExercicio
         holder.fotoExercicio.setImageResource(listaExercicios[position].foto)
+        holder.itemView.setOnClickListener(){
 
+//            Toast.makeText(it.context, "Deu certo", Toast.LENGTH_SHORT).show()
+             val novaTela = Intent(it.context, ExercicioActivity::class.java)
+             it.context.startActivity(novaTela)
+        }
     }
 
 
